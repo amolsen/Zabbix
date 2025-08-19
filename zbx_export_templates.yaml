@@ -1,0 +1,46 @@
+zabbix_export:
+  version: '7.4'
+  template_groups:
+    - uuid: 752592755920421aba5ad5cf3ee24369
+      name: power
+  templates:
+    - uuid: 65c9fb2fe83447a7a0c4f75946ca018c
+      template: 'Generic APC PDU'
+      name: 'Generic APC PDU'
+      groups:
+        - name: power
+      items:
+        - uuid: d8a24cf9a34d4e17a7836e5cefec48bc
+          name: 'Pdu Contact'
+          type: SNMP_AGENT
+          snmp_oid: iso.3.6.1.2.1.1.4.0
+          key: apc.generic.pdu.contact
+          value_type: TEXT
+        - uuid: c18bd50ad9964bcba105f1dcdd73b8e2
+          name: 'Pdu Location'
+          type: SNMP_AGENT
+          snmp_oid: iso.3.6.1.2.1.1.6.0
+          key: apc.generic.pdu.location
+          history: '0'
+          value_type: TEXT
+        - uuid: 30f5e215249a43f1a0ce58723407bfb3
+          name: 'Pdu Name'
+          type: SNMP_AGENT
+          snmp_oid: iso.3.6.1.2.1.1.5.0
+          key: apc.generic.pdu.name
+          history: '0'
+          value_type: TEXT
+        - uuid: 542ab4818fe54594a9185d7d8b911054
+          name: 'Pdu Outlet Index'
+          type: SNMP_AGENT
+          snmp_oid: iso.3.6.1.4.1.318.1.1.4.4.2.1.1
+          key: apc.generic.pdu.outlet.index
+          history: '0'
+          trends: '0'
+        - uuid: 3ed818ea1eb7402c90172062a7fa99e6
+          name: 'Pdu Outlet Table Size'
+          type: SNMP_AGENT
+          snmp_oid: iso.3.6.1.4.1.318.1.1.4.5.1
+          key: apc.generic.pdu.outlet.table.size
+          history: '0'
+          trends: '0'
